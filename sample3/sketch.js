@@ -1,8 +1,6 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
-}
 
-function draw() {
   let numA = 10;
   let numB = 6;
   let scalar = 50;
@@ -13,11 +11,14 @@ function draw() {
   let xPos = 0;
   let yPos = 0;
   let itr = 0;
+  colorMode(HSB, 1);
+  let col = color(random(1), 1, 1);
 
   while(wd > 0){
     itr++;
     if(itr % 2 == 1){
       while(xPos + wd <= numA){
+        fill(col)
         rect(xPos, yPos, wd, wd);
         xPos += wd;
       }
@@ -30,4 +31,8 @@ function draw() {
       wd = numB - yPos
     }
   }
+}
+
+function draw() {
+
 }
